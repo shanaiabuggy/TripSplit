@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+	 <meta name="description" content="">
+	 <title>Archived Trips</title>
+	 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../resources/css/archive.css" rel="stylesheet">
+ </head>
+
+ <body>
+	 <!--Navigation bar-->
+	 <nav class="navbar navbar-expand-sm navbar-custom">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+	      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="homepage.html">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="archive.html">Archive</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+  <!--End nav bar-->
+   <div class="center text-center">
+    <h1 class="text-white">Archived trips</h1>
+    <h5 class="text-white text-center"><small>Records are important</small></h5>
+   </div>
+
+  <div class="container">
+     <br><br>
+     <div class="row">
+       <div class="col-4">
+
+           <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle btn-lg round" type="button" id="selectTripButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Select a Trip
+             </button>
+             <div id="Trip_selector" class="dropdown-menu" aria-labelledby="selectTripButton">
+             </div>
+           </div>
+
+
+       </div>
+       <div class="col-8">
+         <div class="table-responsive">
+           <table class="table">
+             <tr>
+               <th class="text-white">Trip</th>
+               <td><span id="tripName"></span></td><td></td>
+             </tr
+             <tr>
+               <td class="text-white">Member name <span id="p_yards"> </span></td>
+               <!--need to change ids here-->
+               <td class="text-white">Expense name<span id="avg_p_yards"> </span></td>
+               <td class="text-white">Cost: $<span id="avg_p_yards"> </span></td>
+             </tr>
+             <tr>
+               <td class="text-white">Member name<span id="p_yards"> </span></td>
+               <td class="text-white">Expense name<span id="r_yards"> </span></td>
+               <td class="text-white">Cost: $<span id="avg_r_yards"> </span></td>
+             </tr>
+             <tr>
+               <td class="text-white">Member name <span id="p_yards"> </span></td>
+               <td class="text-white">Expense name<span id="rec_yards"> </span></td>
+               <td class="text-white">Cost: $<span id="avg_rec_yards"> </span></td>
+             </tr>
+             <tr>
+               <td></td>
+               <td></td>
+               <td>
+
+               </td>
+             </tr>
+           </table>
+         </div>
+       </div>
+     </div>
+    </div>
+  </body>
+</html>

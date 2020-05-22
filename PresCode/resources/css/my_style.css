@@ -1,0 +1,75 @@
+
+/***********************
+  ROUND BUTTONS
+************************/
+.round {
+  border-radius: 24px;
+}
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /*text-transform: uppercase;*/
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #8BE0F8;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #6DD2EF !important;
+    box-shadow: none !important;
+}
+
+.btn-secondary {
+  background: #1DA4B4;
+  color: #ffffff;
+}
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open > .dropdown-toggle.btn-secondary {
+    background: #0097A8 !important;
+    box-shadow: none !important;
+}
+
+.btn-info {
+  background: #3B60A4;
+  color: #ffffff;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+    background: #2754A5 !important;
+    box-shadow: none !important;
+}
+
+/* login button */
+.btn-outline-success {
+  color: #F4BF0E;
+}
+.btn-outline-success:hover, .btn-outline-success:focus, .btn-outline-success:active, .btn-outline-success.active, .open > .dropdown-toggle.btn-outline-success {
+  background: #F4BF0E !important;
+  box-shadow: none !important;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #3B60A4;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #3B60A4;
+}
+
+/* change the color of active or hovered links */
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #153A7E;
+}

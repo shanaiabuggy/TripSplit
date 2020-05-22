@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+	 <meta name="description" content="">
+	 <title>Current Trip</title>
+	 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+	<link href="../resources/css/currentTrips.css" rel="stylesheet">
+ </head>
+
+ <body>
+	 <!--Navigation bar-->
+	 <nav class="navbar navbar-expand-sm navbar-custom">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+	      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="/homepage">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/archive">Archive</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+  <!--End nav bar-->
+   <div class="center text-center">
+    <h1 class="text-white">Current Trips</h1>
+    <h5 class="text-white text-center"><small>See who has paid for what</small></h5>
+   </div>
+
+  <div class="container">
+     <br><br>
+     <div class="row">
+       <div class="col-4">
+
+				<form class="form"action="/currentTrips/get_trip" method="get">
+						<select class="custom-select" name="user_choice" onchange="this.form.submit()">
+							 <option selected>Select Trip</option>
+							<% console.log(trips)%>
+							 <% if (trips) { 
+									var trip_options = '';
+					 				trips.forEach(function(item){
+					 					trip_options += '<option value="' + item.group_id + '">' + item.group_name + '</option>'; 
+				 					}); %>
+				 					<%- trip_options %>
+				 			 <% }%>
+						</select>
+					</form>
+				  </div>
+
+
+			<div class="col-8">
+				<div class="table-responsive">
+					<table class="table">
+				<h5 class="text-white font-weight-bold"> <% if(name){
+					var tp ='Trip Selected: ';
+					name.forEach(function(item){
+						tp+= item.group_name;
+					}); %>
+					<%- tp %>
+					<%}%>
+				</h5>
+						<tr> <th class="text-white"> Member </th> <th class="text-white"> Amount Spent </th> <th class="text-white"> Description </th> </tr>
+				<%if(trip_info){
+						var transList = '';
+						trip_info.forEach(function(item){
+						transList += '<tr><td class="text-white">' + item.member_name + ' <span id="name"> </span></td><td class="text-white">' + item.amount + '<span id="esp_cost"> </span></td><td class="text-white">' + item.description + '<span id="exp_descr"> </span></td></tr>';
+            }); %>
+            <%- transList %>
+            <%}%>
+
+
+
+					</table>
+				</div>
+			</div>
+       </div>
+     </div>
+     <br><br>
+     <div class="container">
+     <h3 class="text-white">Add an expense for this trip:</h3>
+     <br>
+     <form action="/currentTrips/add_expense" method="post">
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <input type="text" class="form-control" id="memberName" placeholder="Enter member name">
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="form-control" id="expenseName" placeholder="Enter expense name (eg. gas)">
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="form-control" id="expenseAmount" placeholder="Enter expense amount">
+        </div>
+        <div class="form-group col-md-3">
+          <form action="currentTrips.html">
+            <div class="center text-center">
+             <input class="add-row btn btn-primary btn-sm round" type="submit" value="Submit">
+           </div>
+         </form>
+        </div>
+      </div>
+    </form>
+  </div>
+   <br>
+   <div class="center text-center">
+    <a href="/splitTable" type="button" class="btn btn-info btn-lg round">Split this trip!</a>
+  </div>
+   </div>
+ </body>
+
+ </html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+	 <meta name="description" content="">
+	 <title>Current Trip</title>
+	 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../resources/css/my_style.css" rel="stylesheet">
+ </head>
+
+ <body>
+	 <!--Navigation bar-->
+	 <nav class="navbar navbar-expand-sm navbar-custom">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+	      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="/homepage">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/archive">Archive</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+    <!--End nav bar-->
+    <div class="container">
+     <div class="center text-center">
+      <h1 style="color:#86E0B8;">TripSplit Breakdown</h1>
+     </div>
+    </div>
+    <br><br>
+  <!--Insert table here-->
+				<div class="container">
+				<div class="table-responsive">
+					<table class="table">
+				<h5 class="font-weight-bold" style="color:#1DA4B4;">
+				
+					<%var tpm=1;%>
+					
+				 <% if(total_cost){
+					var t ='Trip Total: ';
+					total_cost.forEach(function(item){
+						t+= item.sum;
+						tpm = item.sum/numMembers[0].count;
+						tpm = tpm.toFixed(2);
+						console.log(t);
+						console.log(numMembers[0].count);
+						console.log(tpm);
+					}); %>
+					<%- t %>
+					<%}%>
+				</h5>
+						<tr> <th> Member </th> <th> Amount Spent </th> <th> Amount Owed Per Member</th> <th> Member Owes </th></tr>
+				<%if(member_list){
+						var memList = '';
+						member_list.forEach(function(item){
+						var b = tpm-item.amount_paid;
+						b = b.toFixed(2)
+						console.log(b);
+						memList += '<tr><td>' + item.first_name + '</td><td>' + item.amount_paid + '</td><td>'+tpm+'</td><td>'+b+'</td></tr>';
+            }); %>
+	<%console.log(memList);%>
+            <%- memList %>
+            <%}%>
+
+
+						
+					</table>
+				</div>
+			
+</div>
+
+ <div class="center text-center">
+  <div class="btn-group">
+    <a href="/currentTrips" class="btn btn-primary round">Go to Current Trips</a>
+    <!-- make this button throw an alert "trip archived!"/ No href needed-->
+    <a href="/archive" class="btn btn-secondary round">Go to Archived Trips</a>
+  </div>
+ </div>
+ </div>
+  </div>
+  </body>
+</html>

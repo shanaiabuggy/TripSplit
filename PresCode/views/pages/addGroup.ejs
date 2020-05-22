@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+	 <meta name="description" content="">
+	 <title>New Trip</title>
+	 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../resources/css/addGroup.css" rel="stylesheet">
+ </head>
+
+ <body>
+	 <!--Navigation bar-->
+	 <nav class="navbar navbar-expand-sm navbar-custom">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+	      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="/homepage">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/archive">Archive</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+  <!--End nav bar-->
+	<div class="center text-center">
+		<h1 class="text-white">Create a new trip!</h1>
+	</div>
+
+	 <div class="container">
+		 <form>
+		   <div class="form-group">
+		     <label class="text-white" for="tripName">Trip name</label>
+		     <input type="text" class="form-control" id="tripName" placeholder="Enter a trip name">
+		   </div>
+		   <div class="form-group">
+		     <label class="text-white" for="member1">Enter member names (up to 8)</label>
+		     <input type="text" class="form-control" id="member1" placeholder="1) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member2" placeholder="2) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member3" placeholder="3) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member4" placeholder="4) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member5" placeholder="5) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member6" placeholder="6) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member7" placeholder="7) Enter a name">
+		   </div>
+			 <div class="form-group">
+		     <input type="text" class="form-control" id="member8" placeholder="8) Enter a name">
+		   </div>
+		 </form>
+		 <form action="/currentTrips">
+			 <div class="center text-center">
+		 		<input class="btn btn-primary btn-lg round" type="submit" value="Submit">
+		 	</div>
+		</form>
+		<div></div>
+	</div>
+	<script src="../resources/js/my_script.js"></script>
+ </body>
+
+ </html>

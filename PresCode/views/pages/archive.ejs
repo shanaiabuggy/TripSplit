@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initialscale=1, shrink-to-fit=no">
+	 <meta name="description" content="">
+	 <title>Archived Trips</title>
+	 <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="../resources/css/archive.css" rel="stylesheet">
+ </head>
+
+ <body>
+	 <!--Navigation bar-->
+	 <nav class="navbar navbar-expand-sm navbar-custom">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+
+	    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+	      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	        <li class="nav-item active">
+	          <a class="nav-link" href="/homepage">Home</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="/archive">Archive</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+  <!--End nav bar-->
+   <div class="center text-center">
+    <h1 class="text-white">Archived trips</h1>
+    <h5 class="text-white text-center"><small>Records are important</small></h5>
+   </div>
+
+  <div class="container">
+     <br><br>
+     <div class="row">
+       <div class="col-4">
+<form class="form"action="/archive/get_trip" method="get">
+						<select class="custom-select" name="user_choice" onchange="this.form.submit()">
+							 <option selected>Select Trip</option>
+							 <% if (trips) { 
+									var trip_options = '';
+					 				trips.forEach(function(item){
+					 					trip_options += '<option value="' + item.group_id + '">' + item.group_name + '</option>'; 
+				 					}); %>
+				 					<%- trip_options %>
+				 			 <% }%>
+						</select>
+					</form>
+				  </div>
+
+
+			<div class="col-8">
+				<div class="table-responsive">
+					<table class="table">
+				<h5 class="text-white font-weight-bold"> <% if(name){
+					var tp ='Trip Selected: ';
+					name.forEach(function(item){
+						tp+= item.group_name;
+					}); %>
+					<%- tp %>
+					<%}%>
+				</h5>
+						<tr> <th class="text-white"> Member </th> <th class="text-white"> Amount Spent </th> <th class="text-white"> Description </th> </tr>
+				<%if(trip_info){
+						var transList = '';
+						trip_info.forEach(function(item){
+						transList += '<tr><td class="text-white">' + item.member_name + ' <span id="name"> </span></td><td class="text-white">' + item.amount + '<span id="esp_cost"> </span></td><td class="text-white">' + item.description + '<span id="exp_descr"> </span></td></tr>';
+            }); %>
+            <%- transList %>
+            <%}%>
+
+
+
+					</table>
+				</div>
+			</div>
+     </div>
+	
+    </div>
+ <div class="center text-center">
+    <a href="/splitTable" type="button" class="btn btn-info btn-lg round">View this trip's breakdown</a>
+  </div>
+  </body>
+</html>

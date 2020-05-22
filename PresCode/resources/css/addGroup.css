@@ -1,0 +1,46 @@
+
+
+body {
+  background-color: #8BE0F8;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #3B60A4;
+}
+/* change the color of active or hovered links */
+
+.navbar-custom .nav-item:hover .nav-link {
+    color: #153A7E;
+}
+
+/***********************
+  ROUND BUTTONS
+************************/
+.round {
+  border-radius: 24px;
+}
+
+/***********************
+  CUSTON BTN VALUES
+************************/
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    /*text-transform: uppercase;*/
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+
+.btn-primary {
+    background: #3B60A4;
+    color: #ffffff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #2754A5 !important;
+    box-shadow: none !important;
+}
